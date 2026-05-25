@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gusf=6nm=-f6aq2al!h33f6dk6@*!q=*xk&^c2a#nm%aj%0n4i
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '.herukoapp.com',
+    '.herokuapp.com',
     '.127.0.0.1',
 ]
 
