@@ -1,0 +1,1 @@
+web: gunicorn review_the_comic.wsgi
