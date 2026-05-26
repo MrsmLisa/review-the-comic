@@ -5,18 +5,21 @@
 #c19fa3 
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Luckiest+Guy&display=swap');
+
+
 body {
     background-color: aliceblue;
 }
 
 h1, h2, h3 {
     font-family: 'Luckiest Guy', cursive;
-    color: #444655;
+    color: black;
 }
 
 p {
     font-family: 'Elms Sans', sans-serif;
-    color: #444655;
+    color: black;
 }
 
 /* navbar */
@@ -30,12 +33,10 @@ p {
 
 .hero h1 {
     font-size: 3rem;
-    color: #4d5a91;
     text-align: center;
 }
 
 .hero p {
     font-size: 1rem;
-    color: #444655;
     text-align: center;
 }
