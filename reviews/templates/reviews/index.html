@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Reviews</h1>
+    {% for review in reviews %}
+        <div>
+            <h2>{{ review.title }}</h2>
+            <p>{{ review.content }}</p>
+            <p>Rating: {{ review.rating }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

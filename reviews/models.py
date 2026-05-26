@@ -11,8 +11,8 @@ class Review(models.Model):
     status = models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)
     excerpt = models.CharField(max_length=255, blank=True, null=True)
     
-    def __str__(self):
-        return self.title
-    
     class Meta:
         ordering = ['-created_at']
+
+    def __str__(self):
+        return self.title

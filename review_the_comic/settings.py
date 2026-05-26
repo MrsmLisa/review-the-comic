@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import os 
-import dj_database_url 
+import os
+import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
@@ -27,14 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '.herokuapp.com',
     '.127.0.0.1',
 ]
-
-
 
 # Application definition
 
@@ -64,7 +62,9 @@ ROOT_URLCONF = 'review_the_comic.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,7 +91,6 @@ WSGI_APPLICATION = 'review_the_comic.wsgi.application'
 #}
 
 DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
