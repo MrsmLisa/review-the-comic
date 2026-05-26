@@ -19,12 +19,23 @@ p {
     color: #444655;
 }
 
-.hero {
-    background-color: #4d5a91;
-    padding: 50px 20px;
+/* navbar */
+
+.navbar-style {
+    background-color: aliceblue;
+}
+
+
+/* hero section */
+
+.hero h1 {
+    font-size: 3rem;
+    color: #4d5a91;
     text-align: center;
 }
 
-p .hero{
-    color:white
+.hero p {
+    font-size: 1rem;
+    color: #444655;
+    text-align: center;
 }
