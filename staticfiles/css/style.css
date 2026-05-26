@@ -1,0 +1,30 @@
+/* color pallett 
+#4d5a91
+#a9aabc
+#444655
+#c19fa3 
+*/
+
+body {
+    background-color: aliceblue;
+}
+
+h1, h2, h3 {
+    font-family: 'Luckiest Guy', cursive;
+    color: #444655;
+}
+
+p {
+    font-family: 'Elms Sans', sans-serif;
+    color: #444655;
+}
+
+.hero {
+    background-color: #4d5a91;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+p .hero{
+    color:white
+}
