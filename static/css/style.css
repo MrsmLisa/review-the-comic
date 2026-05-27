@@ -7,7 +7,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Chewy&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 body {
-    background-color: aliceblue;
+    background-color: white;
 }
 
 h1, h2, h3 {
@@ -22,19 +22,50 @@ p {
 
 /* navbar */
 
-.logo img {
-    width: 10em;
-    height: 10em;
+.logo {
+    width: 3em !important;
+    height: auto !important;
+}
+
+.navbar-collapse {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    width: auto;
+    padding: 10px 20px;
+    z-index: 999;
+}
+    
+.navbar {
+    position: relative;
 }
 
 /* hero section */
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 }
 
 .hero p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 4em;
+    }
+    .logo {
+        width: 5em !important;
+    }
+}
+@media (min-width: 1024px) {
+    .hero h1 {
+        font-size: 5em;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
 }
