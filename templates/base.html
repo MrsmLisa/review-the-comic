@@ -24,9 +24,7 @@
       <!-- navbar from Bootstrap -->
       <nav class="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" >
-      <img src="{% static 'images/logo.png' %}" alt="Logo" class="d-inline-block align-text-top logo">
-    </a>
+    <h6 class="nav-title">Review the Comic</h6>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,16 +47,23 @@
   </div>
 </nav>
       <!-- Hero -->
-      <div class="hero">
-        <h1 class="hero-title">Review the comic</h1>
+      <div class="hero container text-center">
+        <a class="hero-img" href="#" >
+      <img src="{% static 'images/logo.png' %}" alt="Logo" class="d-inline-block align-text-top logo2">
+    </a>
         <p class="hero-description">Read reviews and ratings for your favorite comics.</p>
       </div>
     </header>
     <main>
-      {% block content %} {% endblock %}
+      {% block content %} 
+      {% endblock %}
     </main>
+    <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2026 Review the Comic. All rights reserved.</p>
+      <div class="container text-center">
+        <p>&copy; 2026 Review the Comic. All rights reserved.</p>
+      </div>
+      
     </footer>
 
     <!-- Bootstrap JS -->
