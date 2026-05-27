@@ -1,6 +1,9 @@
+from django_summernote import admin
+
 from . import views
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('review/<slug:slug>/', views.review_detail, name='review_detail'),
+    path('', views.index, name='index'),
 ]

@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 class Review(models.Model):
     title = models.CharField(max_length=200)
-    book_author = models.CharField(max_length=100)  # author of the book
+    book_author = models.CharField(default='Untitled', max_length=200)  # author of the book
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True)

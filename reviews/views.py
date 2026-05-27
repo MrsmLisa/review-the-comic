@@ -5,3 +5,7 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'reviews/index.html')
+
+def review_detail(request, slug):
+    return render(request, 'reviews/review_detail.html', {'slug': slug})
+
