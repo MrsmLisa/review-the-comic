@@ -28,6 +28,22 @@ p {
     font-size: 0.8em;
 }
 
+button {
+    font-family: 'SN Pro', sans-serif;
+    color: black;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button {
+    font-family: 'SN Pro', sans-serif;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
 /* navbar */
 
 .navbar-collapse {
