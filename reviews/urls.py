@@ -1,5 +1,4 @@
 from django_summernote import admin
-
 from . import views
 from django.urls import include, path
 
