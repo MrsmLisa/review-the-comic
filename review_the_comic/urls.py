@@ -26,5 +26,4 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', views.ReviewListView.as_view(), name='index'),
     path('review/<slug:slug>/', views.ReviewDetailView.as_view(), name='review_detail'),
-    path('comment/<slug:slug>/', views.CommentListView.as_view(), name='comment_list'),
 ]
