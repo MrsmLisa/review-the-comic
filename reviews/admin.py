@@ -1,8 +1,6 @@
-from xml.etree.ElementTree import Comment
-
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Review
+from .models import Review, Comment
 
 @admin.register(Review)
 class ReviewAdmin(SummernoteModelAdmin):
