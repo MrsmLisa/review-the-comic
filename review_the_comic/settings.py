@@ -31,7 +31,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '.herokuapp.com',
-    '.127.0.0.1',
+    '127.0.0.1',
 ]
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary',
     'cloudinary_storage',
     'reviews'
 ]
