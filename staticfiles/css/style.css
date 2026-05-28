@@ -1,40 +1,137 @@
-/* color pallett 
-#4d5a91
-#a9aabc
-#444655
-#c19fa3 
-*/
 
-@import url('https://fonts.googleapis.com/css2?family=Chewy&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 body {
-    background-color: aliceblue;
+    background-color: white;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
-h1, h2, h3 {
-    font-family: 'Chewy', cursive;
+h1, h5 {
+    font-family: 'Luckiest Guy', cursive;
     color: black;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Luckiest Guy', cursive;
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 0;
 }
 
 p {
     font-family: 'SN Pro', sans-serif;
     color: black;
+    font-size: 0.8em;
+}
+
+button {
+    font-family: 'SN Pro', sans-serif;
+    color: black;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button {
+    font-family: 'SN Pro', sans-serif;
+    font-size: 0.8em;
+    cursor: pointer;
 }
 
 /* navbar */
 
-.logo img {
-    width: 10em;
-    height: 10em;
+.navbar-collapse {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: auto;
+    padding: 10px 20px;
+    z-index: 999;
+}
+
+.nav-title {
+    font-family: 'Luckiest Guy', cursive;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+    
+.navbar {
+    position: relative;
+    padding: 0;
+    background-color: black;
+}
+
+.navbar-toggler {
+    background: white;
+    padding: 2px 4px;
+    margin: 10px;
+    font-size: medium;
+}
+
+.logo2 {
+    width: 12em !important;
+    height: auto !important;
 }
 
 /* hero section */
 
-.hero h1 {
-    font-size: 3rem;
-    text-align: center;
+.hero {
+    padding-bottom: 40px;
+    padding-top: 10px;
+    background-color: white;
 }
 
 .hero p {
-    font-size: 1rem;
+    font-size: 0.5rem;
     text-align: center;
+    margin: 0;
 }
+
+/* footer */
+
+.footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+.footer p {
+    color: white;
+    font-family: 'SN Pro', sans-serif;
+    margin: 0;
+}
+
+/* media queries for responsiveness */
+
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3em;
+    }
+    .logo2 {
+        width: 18em !important;
+    }
+     .hero p {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 1024px) {
+   
+}
+
+/* index page */
+
+.card {
+    border-color: black;
+    border-width: 2px;
+    border-radius: 0;
+    margin-left: 5px;
+    margin-right: 5px; 
+}
+
