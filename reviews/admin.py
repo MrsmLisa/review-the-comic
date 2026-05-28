@@ -1,3 +1,5 @@
+from xml.etree.ElementTree import Comment
+
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Review
@@ -10,5 +12,11 @@ class ReviewAdmin(SummernoteModelAdmin):
     list_filter = ('status', 'created_at')
     summernote_fields = ('content',)
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('author', 'review', 'created_at')
+    search_fields = ('author', 'content')
+    list_filter = ('created_at',)    
+
 # Register your models here.
 
+admin.site.register(Comment, CommentAdmin)

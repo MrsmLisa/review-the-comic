@@ -21,3 +21,12 @@ class ReviewDetailView(DetailView):
 def review_detail(request, slug):
     return render(request, 'reviews/review_detail.html', {'slug': slug})
 
+class CommentListView(ListView):
+    model = Review
+    template_name = 'reviews/review_detail.html'
+    context_object_name = 'comments'
+    slug_url_kwarg = 'slug'
+
+    def get_queryset(self):
+        review = get_object_or_404(Review, slug=self.kwargs['slug'])
+        return review.comments.all()

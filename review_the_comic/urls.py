@@ -24,6 +24,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('reviews.urls')),
     path('accounts/', include('allauth.urls')),
+    path('comment/<slug:slug>/', include('reviews.urls')),
 ]
 
 if settings.DEBUG:
