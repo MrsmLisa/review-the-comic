@@ -1,9 +1,3 @@
-/* color pallett 
-#4d5a91
-#a9aabc
-#444655
-#c19fa3 
-*/
 
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
@@ -15,9 +9,17 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-h1, h2, h3{
+h1, h5 {
     font-family: 'Luckiest Guy', cursive;
     color: black;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Luckiest Guy', cursive;
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 0;
 }
 
 p {
@@ -51,15 +53,23 @@ p {
 }
 
 .navbar-toggler {
-    background: transparent;
-    padding: 4px 8px;
+    background: white;
+    padding: 2px 4px;
+    margin: 10px;
+    font-size: medium;
+}
+
+.logo2 {
+    width: 12em !important;
+    height: auto !important;
 }
 
 /* hero section */
 
-.logo2 {
-    width: 18em !important;
-    height: auto !important;
+.hero {
+    padding-bottom: 40px;
+    padding-top: 10px;
+    background-color: white;
 }
 
 .hero p {
@@ -86,18 +96,26 @@ p {
 
 @media (min-width: 768px) {
     .hero h1 {
-        font-size: 10em;
+        font-size: 3em;
     }
     .logo2 {
-        width: 35em !important;
+        width: 18em !important;
     }
      .hero p {
         font-size: 1rem;
     }
 }
 @media (min-width: 1024px) {
-    .hero h1 {
-        font-size: 5em;
-    }
    
 }
+
+/* index page */
+
+.card {
+    border-color: black;
+    border-width: 2px;
+    border-radius: 0;
+    margin-left: 5px;
+    margin-right: 5px; 
+}
+
