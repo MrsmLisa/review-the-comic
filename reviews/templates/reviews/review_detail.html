@@ -1,43 +1,62 @@
-{% extends 'base2.html' %}
-{%load crispy_forms_tags %}
-{% load static %}
-
+{% extends 'base2.html' %} 
+{%load crispy_forms_tags %} 
+{% load static %} 
 {% block content %}
 
 <section>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-10 col-md-8">
-                <h1>{{ review.title }}</h1>
-                <p>By {{ review.book_author }}</p>
-                <p>{{ review.content }}</p>
-                <hr>
-                <h3>Comments</h3>
-                {% for comment in comments %}
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <p>{{ comment.content }}</p>
-                            <strong>By {{ comment.author.username }}</strong><br>
-                            <small>Posted on {{ comment.created_at }}</small>
-                        </div>
-                    </div>
-                {% empty %}
-                    <p>No comments yet. Be the first to comment!</p>
-                {% endfor %}
-                <hr>
-                {% if user.is_authenticated %}
-                <h3>Leave a Comment</h3>
-                <form method="post" action="{% url 'comment_review' slug=review.slug %}">
-                    {% csrf_token %}
-                    {{ comment_form.as_p }}
-                    <button type="submit" class="btn btn-primary">Submit Comment</button>
-                </form>
-                {% else %}
-                <p><a href="{{ login_url }}">Log in</a> to leave a comment.</p>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10 col-md-8">
+        <h1>{{ review.title }}</h1>
+        <p>By {{ review.book_author }}</p>
+        <p>{{ review.content }}</p>
+        <hr />
 
+        <!-- Like Buttons Icons from Font Awesome -->
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'review_like' slug=review.slug %}">
+          {% csrf_token %} 
+          {% if post_is_liked %}
+          <button type="submit" name="like" class="unlike" aria-label="Unlike">
+            <i class="far fa-heart"></i>
+          </button>
+          {% else %}
+          <button type="submit" name="like" class="like" aria-label="Like">
+            <i class="fas fa-heart"></i>
+          </button>
+          {% endif %}
+        </form>
+        {% endif %}
+
+        <!-- Comment section -->
+        <h3>Comments</h3>
+        {% for comment in comments %}
+        <div class="card mb-2">
+          <div class="card-body">
+            <p>{{ comment.content }}</p>
+            <strong>By {{ comment.author.username }}</strong><br />
+            <small>Posted on {{ comment.created_at }}</small>
+          </div>
+        </div>
+        {% empty %}
+        <p>No comments yet. Be the first to comment!</p>
+        {% endfor %}
+        <hr />
+
+        {% if user.is_authenticated %}
+        <h3>Leave a Comment</h3>
+        <form
+          method="post"
+          action="{% url 'comment_review' slug=review.slug %}"
+        >
+          {% csrf_token %} {{ comment_form.as_p }}
+          <button type="submit" class="btn btn-primary">Submit Comment</button>
+        </form>
+        {% else %}
+        <p><a href="{{ login_url }}">Log in</a> to leave a comment.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

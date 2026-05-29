@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.ReviewListView.as_view(), name='index'),
     path('review_create/', views.review_create, name='review_create'),
     path('review/<slug:slug>/comment/', views.comment_review, name='comment_review'),
+    path('review/<slug:slug>/like/', views.review_like, name='review_like'),
 ]

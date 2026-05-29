@@ -44,6 +44,20 @@ p {
     cursor: pointer;
 }
 
+.like {
+    border: none;
+    background: none;
+    cursor: pointer; 
+    color: red;
+}
+
+.unlike {
+    border: none;
+    background: none;
+    cursor: pointer; 
+    color: black;
+}
+
 /* navbar */
 
 .navbar-collapse {

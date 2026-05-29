@@ -17,6 +17,7 @@ class Review(models.Model):
     status = models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)
     excerpt = models.CharField(max_length=255, blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
+    likes = models.ManyToManyField(User, related_name='liked_reviews')
 
     class Meta:
         ordering = ['-created_at']
@@ -32,6 +33,9 @@ class Review(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
+    def total_likes(self):
+        return self.likes.count()    
+
 class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(max_length=80)
@@ -43,3 +47,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'Comment by {self.author} on {self.review}'
+    
