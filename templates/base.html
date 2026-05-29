@@ -29,7 +29,7 @@
       <!-- navbar from Bootstrap -->
       <nav class="navbar">
   <div class="container-fluid">
-      <a class="hero-img" href="#" >
+      <a class="hero-img" href="{% url 'index' %}" >
       <img src="{% static 'images/logo2.png' %}" alt="Logo" class="d-inline-block align-text-top logo2">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,18 +38,21 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ home_url }}">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
         </li>
         {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == review_create_url %}active{% endif %}" href="{% url 'review_create' %}">Create Review</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{{ logout_url }}">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{{ signup_url }}">Sign Up</a>
+          <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Sign In</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Login</a>
+          <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{{ signup_url }}">Sign Up</a>
         </li>
         {% endif %}
       </ul>
