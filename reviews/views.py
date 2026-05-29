@@ -25,16 +25,19 @@ class ReviewDetailView(DetailView):
 
 def review_detail(request, slug):
     review = get_object_or_404(Review, slug=slug, status=1)
+    comments = review.comments.all().order_by('-created_at')
     comment_form = CommentForm()
 
     return render(request, 'reviews/review_detail.html', {
         'review': review,
+        'comments': comments,
         'comment_form': comment_form
     })
 
 @login_required
 def comment_review(request, slug):
     review = get_object_or_404(Review, slug=slug)
+    comments = review.comments.all().order_by('-created_at')
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
@@ -48,11 +51,14 @@ def comment_review(request, slug):
         comment_form = CommentForm()
 
     return render(request, 'reviews/review_detail.html', {
+        'review': review,
+        'comments': comments,
         'comment_form': comment_form
     })
 
 @login_required
 def review_create(request):
+    form = review.comments.all().order_by('-created_at')
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -64,4 +70,4 @@ def review_create(request):
             return redirect('index')
     else:
         form = ReviewForm()
-    return render(request, 'reviews/review_form.html', {'form': form})    
+    return render(request, 'reviews/review_form.html', {'form': form})

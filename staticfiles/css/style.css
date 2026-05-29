@@ -28,7 +28,7 @@ p {
     font-size: 0.8em;
 }
 
-button {
+.btn {
     font-family: 'SN Pro', sans-serif;
     color: black;
     border-color: black;
