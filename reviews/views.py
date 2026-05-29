@@ -20,9 +20,6 @@ class ReviewDetailView(DetailView):
     slug_url_kwarg = 'slug'
 
 def review_detail(request, slug):
-    return render(request, 'reviews/review_detail.html', {'slug': slug})
-
-def review_detail(request, slug):
     review = get_object_or_404(Review, slug=slug, status=1)
     comment_form = CommentForm()
 

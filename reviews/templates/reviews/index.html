@@ -5,25 +5,35 @@
 
 <section>
 <!-- Cards for reviews -->
-    <!-- Bootstrap Card -->
-     <div class="row justify-content-center">
+  <!-- Bootstrap Card -->
+  <div class="row justify-content-center"> 
     {% for review in reviews %}
-    <div class="card mb-3 col-10 col-md-5" style="max-width: 400px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
+    <div class="col-10 col-md-5 mb-3">
+      <!-- Made the whole card clickable -->
+      <a href="{{ review.review_url }}" style="cursor: pointer;" class="text-decoration-none text-dark">
+        <div class="card" style="max-width: 400px;">
+          <div class="row g-0">
+             <div class="col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ review.title }}</h5>
+            <p class="card-text">By {{ review.book_author }}</p>
+            <p class="card-text">{{review.excerpt}}.</p>
+            <p class="card-text"><small class="text-body-secondary">{{review.date}}</small></p>
+          </div>
+          </div>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{ review.title }}</h5>
-        <p class="card-text">By {{ review.book_author }}</p>
-        <p class="card-text">{{review.excerpt}}.</p>
-        <p class="card-text"><small class="text-body-secondary">{{review.date}}</small></p>
-      </div>
-    </div>
-  </div>
-</div>
     {% endfor %}
+      
+</div>
+
+
+    
 <!-- if more then 6, start a new page with pagination -->
 
 {% if is_paginated %}
@@ -31,15 +41,16 @@
     <ul class="pagination justify-content-center">
       {% if page_obj.has_previous %}
         <li class="page-item">
-          <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo; PREV</a>
+          <a class="page-link btn" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">&laquo; PREV</a>
         </li>
         {% endif %}
       {% if page_obj.has_next %}
-        <li class="page-item disabled">
-          <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Previous">NEXT &raquo;</a>
+        <li class="page-item">
+          <a class="page-link btn" href="?page={{ page_obj.next_page_number }}" aria-label="Next">NEXT &raquo;</a>
         </li>
       {% endif %}
     </ul>
+  </nav>
 {% endif %}
 
 
