@@ -149,3 +149,13 @@ p {
     margin-right: 5px; 
 }
 
+.card p {
+    font-size: 0.8em;
+    margin-bottom: 0;
+}
+
+.comment-p {
+    font-size: 1em !important;
+    margin-bottom: 1rem !important;
+}
+
