@@ -44,15 +44,16 @@ def review_detail(request, slug):
 @login_required
 def comment_review(request, slug):
     review = get_object_or_404(Review, slug=slug)
-    comments = review.comments.all().order_by('-created_at')
+    comments = review.comments.filter(approved=True).order_by('-created_at')
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.review = review
             comment.author = request.user
+            comment.approved = False
             comment.save()
-            messages.success(request, 'Comment added successfully.')
+            messages.info(request, 'Your comment has been submitted and is awaiting approval.')
             return redirect('review_detail', slug=slug)
     else:
         comment_form = CommentForm()

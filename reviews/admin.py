@@ -13,7 +13,11 @@ class ReviewAdmin(SummernoteModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('author', 'review', 'created_at')
     search_fields = ('author', 'content')
-    list_filter = ('created_at',)    
+    list_filter = ('created_at',)   
+    actions = ['approve_comments'] 
+    def approve_comments(self, request, queryset):
+        queryset.update(approved=True)
+    approve_comments.short_description = "Approve selected comments"
 
 # Register your models here.
 

@@ -10,7 +10,7 @@ from django.utils.text import slugify
 
 class Review(models.Model):
     title = models.CharField(max_length=200)
-    book_author = models.CharField(default='Untitled', max_length=200)  # author of the book
+    book_author = models.CharField(max_length=200)  # author of the book
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True)
@@ -38,9 +38,10 @@ class Review(models.Model):
 
 class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='comments')
-    author = models.CharField(max_length=80)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['created_at']
