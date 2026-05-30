@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
-from requests import post
+from requests import post, request
 from .models import Review
 from django.views.generic import ListView, DetailView
 from .forms import CommentForm
@@ -12,7 +12,7 @@ from django.urls import reverse
 
 # Create your views here.
 
-
+""" review main page """
 class ReviewListView(ListView):
     model = Review
     template_name = 'reviews/index.html'
@@ -20,6 +20,7 @@ class ReviewListView(ListView):
     queryset = Review.objects.filter(status=1).order_by('-created_at')
     paginate_by = 6
 
+""" review detail page """
 class ReviewDetailView(DetailView):
     model = Review
     template_name = 'reviews/review_detail.html'
@@ -41,6 +42,7 @@ def review_detail(request, slug):
         'Total_likes': review.total_likes()
     })
 
+""" comment form for review detail page """
 @login_required
 def comment_review(request, slug):
     review = get_object_or_404(Review, slug=slug)
@@ -64,6 +66,7 @@ def comment_review(request, slug):
         'comment_form': comment_form
     })
 
+""" review creation form """
 @login_required
 def review_create(request):
     form = ReviewForm(request.POST)
@@ -88,6 +91,36 @@ def review_like(request, slug):
         review.likes.add(request.user)
     return redirect('review_detail', slug=slug)
 
+
+@login_required
+def editPost(request, slug):
+    review = get_object_or_404(Review, slug=slug)
+    if review.author != request.user:
+        messages.error(request, 'You are not authorized to edit this review.')
+        return redirect('review_detail', slug=slug)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review updated successfully.')
+            return redirect('review_detail', slug=slug)
+    else:
+        form = ReviewForm(instance=review)
+    return render(request, 'reviews/review_form.html', {'form': form})
+
+@login_required
+def deletePost(request, slug):
+    review = get_object_or_404(Review, slug=slug)
+    if review.author != request.user:
+        messages.error(request, 'You are not authorized to delete this review.')
+        return redirect('review_detail', slug=slug)
+    if request.method == 'POST':
+        review.delete()
+        messages.success(request, 'Review deleted successfully.')
+        return redirect('index')
+    return render(request, 'reviews/confirm_delete.html', {'review': review})
+
+""" review like view """
 class ReviewLikeView(DetailView):
     model = Review
     template_name = 'reviews/review_detail.html'

@@ -19,6 +19,13 @@
         <p>{{ review.content }}</p>
         <hr />
 
+        <div class="edit">
+          {% if user == review.author %}
+          <a href="{% url 'edit_review' slug=review.slug %}" class="btn btn-outline-primary">Edit Review</a>
+          <a href="{% url 'delete_review' slug=review.slug %}" class="btn btn-outline-danger">Delete Review</a>
+          {% endif %}
+        </div>
+
         <!-- Like Buttons Icons from Font Awesome -->
         {% if user.is_authenticated %}
         <form method="post" action="{% url 'review_like' slug=review.slug %}">
