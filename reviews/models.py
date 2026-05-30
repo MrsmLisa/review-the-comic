@@ -14,7 +14,7 @@ class Review(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True)
-    status = models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)
+    status = models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=1)
     excerpt = models.CharField(max_length=255, blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     likes = models.ManyToManyField(User, related_name='liked_reviews')

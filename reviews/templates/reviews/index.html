@@ -4,6 +4,13 @@
 
 
 <section>
+    {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
 <!-- Cards for reviews -->
   <!-- Bootstrap Card -->
   <div class="row justify-content-center"> 

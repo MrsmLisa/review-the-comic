@@ -42,21 +42,21 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+          <a class="nav-link" {% if request.path == '/' %}active{% endif %} href="{% url 'index' %}">Home</a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link {% if request.path == review_create_url %}active{% endif %}" href="{{ review_create_url }}">Create Review</a>
+          <a class="nav-link {% if request.path == '/review_create/' %}active{% endif %}" href="{% url 'review_create' %}">Create Review</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{{ logout_url }}">Logout</a>
+          <a class="nav-link {% if request.path == '/accounts/logout/' %}active{% endif %}" href="{{ logout_url }}">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{{ signup_url }}">Sign Up</a>
+          <a class="nav-link {% if request.path == '/accounts/login/' %}active{% endif %}" href="{{ login_url }}">Sign In</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{{ login_url }}">Login</a>
+          <a class="nav-link {% if request.path == '/accounts/signup/' %}active{% endif %}" href="{{ signup_url }}">Sign Up</a>
         </li>
         {% endif %}
       </ul>

@@ -6,6 +6,13 @@
 <section>
   <div class="container">
     <div class="row justify-content-center">
+          {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
       <div class="col-10 col-md-8">
         <h1>{{ review.title }}</h1>
         <p>By {{ review.book_author }}</p>
@@ -55,13 +62,6 @@
         </form>
         {% else %}
         <p><a href="{{ login_url }}">Log in</a> to leave a comment.</p>
-        {% endif %}
-        {% if messages %}
-          {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}" role="alert">
-              {{ message }}
-            </div>
-          {% endfor %}
         {% endif %}
       </div>
     </div>

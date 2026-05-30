@@ -66,7 +66,7 @@ def comment_review(request, slug):
 
 @login_required
 def review_create(request):
-    form = review.comments.all().order_by('-created_at')
+    form = ReviewForm(request.POST)
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
