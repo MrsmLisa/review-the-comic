@@ -35,13 +35,27 @@ p {
     border-width: 2px;
     border-radius: 4px;
     background-color: transparent;
-    cursor: pointer;
+    padding: 4px 4px !important;
 }
 
 .button {
     font-family: 'SN Pro', sans-serif;
     font-size: 0.8em;
     cursor: pointer;
+}
+
+.like {
+    border: none;
+    background: none;
+    cursor: pointer; 
+    color: red;
+}
+
+.unlike {
+    border: none;
+    background: none;
+    cursor: pointer; 
+    color: black;
 }
 
 /* navbar */
@@ -133,5 +147,15 @@ p {
     border-radius: 0;
     margin-left: 5px;
     margin-right: 5px; 
+}
+
+.card p {
+    font-size: 0.8em;
+    margin-bottom: 0;
+}
+
+.comment-p {
+    font-size: 1em !important;
+    margin-bottom: 1rem !important;
 }
 

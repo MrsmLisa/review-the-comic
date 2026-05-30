@@ -12,6 +12,36 @@
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">log in</a>.{% endblocktrans %}</p>
 
+<form method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="id_username" class="form-label">Username</label>
+    {{ form.username }}
+  </div>
+  <div class="mb-3">    
+    <label for="id_email" class="form-label">Email</label>
+    {{ form.email }}
+  </div>
+  <div class="mb-3"
+    <label for="id_password1" class="form-label">Password</label>
+    {{ form.password1 }}
+  </div>
+  <div class="mb3"
+    <label for="id_password2" class="form-label">Confirm Password</label>
+    {{ form.password2 }}
+  </div>
+  <br>
+  <b>
+  <div> 
+  <button type="submit" class="btn btn-primary">{% trans "Sign Up" %} &raquo;</button>
+  </div>
+</form>
+
+{% endblock content %}
+
+
+<!-- old code
+
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
   {{ form|crispy }}
@@ -21,4 +51,4 @@
   <button type="submit">{% trans "Sign Up" %} &raquo;</button>
 </form>
 </div>
-{% endblock content %}
+-->
