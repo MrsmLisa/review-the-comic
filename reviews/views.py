@@ -12,7 +12,9 @@ from django.urls import reverse
 
 # Create your views here.
 
-""" review main page """
+#review main page
+
+
 class ReviewListView(ListView):
     model = Review
     template_name = 'reviews/index.html'
@@ -20,12 +22,15 @@ class ReviewListView(ListView):
     queryset = Review.objects.filter(status=1).order_by('-created_at')
     paginate_by = 6
 
-""" review detail page """
+# review detail page
+
+
 class ReviewDetailView(DetailView):
     model = Review
     template_name = 'reviews/review_detail.html'
     context_object_name = 'review'
     slug_url_kwarg = 'slug'
+
 
 def review_detail(request, slug):
     review = get_object_or_404(Review, slug=slug, status=1)
@@ -42,7 +47,9 @@ def review_detail(request, slug):
         'Total_likes': review.total_likes()
     })
 
-""" comment form for review detail page """
+# comment form for review detail page
+
+
 @login_required
 def comment_review(request, slug):
     review = get_object_or_404(Review, slug=slug)
@@ -66,7 +73,9 @@ def comment_review(request, slug):
         'comment_form': comment_form
     })
 
-""" review creation form """
+# review creation form
+
+
 @login_required
 def review_create(request):
     form = ReviewForm(request.POST)
@@ -82,6 +91,7 @@ def review_create(request):
     else:
         form = ReviewForm()
     return render(request, 'reviews/review_form.html', {'form': form})
+
 
 def review_like(request, slug):
     review = get_object_or_404(Review, slug=slug)
@@ -108,6 +118,7 @@ def editPost(request, slug):
         form = ReviewForm(instance=review)
     return render(request, 'reviews/review_form.html', {'form': form})
 
+
 @login_required
 def deletePost(request, slug):
     review = get_object_or_404(Review, slug=slug)
@@ -120,7 +131,9 @@ def deletePost(request, slug):
         return redirect('index')
     return render(request, 'reviews/confirm_delete.html', {'review': review})
 
-""" review like view """
+# review like view
+
+
 class ReviewLikeView(DetailView):
     model = Review
     template_name = 'reviews/review_detail.html'
@@ -134,6 +147,4 @@ class ReviewLikeView(DetailView):
             liked = True
         data['post_is_liked'] = liked
         data['total_likes'] = like_connected.total_likes()
-        return data    
-
-     
+        return data

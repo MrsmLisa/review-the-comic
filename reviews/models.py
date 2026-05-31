@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.text import slugify
 
-
-
 # Create your models here.
 
 
@@ -24,17 +22,18 @@ class Review(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def review_url(self):
         return reverse('review_detail', kwargs={'slug': self.slug})
-    
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
     def total_likes(self):
-        return self.likes.count()    
+        return self.likes.count()
+
 
 class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='comments')
@@ -48,4 +47,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'Comment by {self.author} on {self.review}'
-    
+
