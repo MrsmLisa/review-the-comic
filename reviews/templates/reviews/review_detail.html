@@ -29,8 +29,8 @@
 
         <div class="edit">
           {% if user == review.author %}
-          <a href="{% url 'edit_review' slug=review.slug %}" class="btn btn-outline-primary">Edit Review</a>
-          <a href="{% url 'delete_review' slug=review.slug %}" class="btn btn-outline-danger">Delete Review</a>
+          <a href="{% url 'edit_review' slug=review.slug %}" class="btn mb-2">Edit Review</a>
+          <a href="{% url 'delete_review' slug=review.slug %}" class="btn mb-2">Delete Review</a>
           {% endif %}
         </div>
 
@@ -55,7 +55,7 @@
       </div>
         
         <!-- Comment section -->
-        <h5>Comments</h5>
+        <h2 class="h5">Comments</h2>
         {% for comment in comments %}
         <div class="card mb-2">
           <div class="card-body">
@@ -70,7 +70,7 @@
         <hr />
 
         {% if user.is_authenticated %}
-        <h5>Leave a Comment</h5>
+        <h2 class="h5">Leave a Comment</h2>
         <form
           method="post"
           action="{% url 'comment_review' slug=review.slug %}"
