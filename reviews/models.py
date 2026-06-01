@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.text import slugify
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -16,6 +17,7 @@ class Review(models.Model):
     excerpt = models.CharField(max_length=255, blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     likes = models.ManyToManyField(User, related_name='liked_reviews')
+    featured_image = CloudinaryField('image', default='placeholder')
 
     class Meta:
         ordering = ['-created_at']

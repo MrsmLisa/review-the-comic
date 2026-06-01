@@ -21,7 +21,11 @@
         <div class="card">
           <div class="row g-0">
              <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
+              {% if "placeholder" in review.featured_image.url %}
+            <img src="{% static 'images/placeholder.jpg' %}"  alt="placeholder image">
+            {% else %}
+            <img src="{{ review.featured_image.url }}" alt="{{ review.title }}">
+            {% endif %}
           </div>
           <div class="col-md-8">
           <div class="card-body">
