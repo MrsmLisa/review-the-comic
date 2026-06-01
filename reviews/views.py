@@ -78,9 +78,8 @@ def comment_review(request, slug):
 
 @login_required
 def review_create(request):
-    form = ReviewForm(request.POST)
     if request.method == 'POST':
-        form = ReviewForm(request.POST)
+        form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             review = form.save(commit=False)
             review.author = request.user
@@ -109,7 +108,7 @@ def editPost(request, slug):
         messages.error(request, 'You are not authorized to edit this review.')
         return redirect('review_detail', slug=slug)
     if request.method == 'POST':
-        form = ReviewForm(request.POST, instance=review)
+        form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             form.save()
             messages.success(request, 'Review updated successfully.')
