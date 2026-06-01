@@ -5,7 +5,7 @@
 
 <section>
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center m-3">
           {% if messages %}
           {% for message in messages %}
             <div class="alert alert-{{ message.tags }}" role="alert">
@@ -13,10 +13,18 @@
             </div>
           {% endfor %}
         {% endif %}
-      <div class="col-10 col-md-8">
+         <div class="col-md-7">
+              {% if "placeholder" in review.featured_image.url %}
+            <img src="{% static 'images/placeholder.jpg' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="placeholder image">
+            {% else %}
+            <img src="{{ review.featured_image.url }}" style="width: 100%; height: 100%; object-fit: cover; padding: 3px;" alt="{{ review.title }}">
+            {% endif %}
+          </div>
+      <div class="col-10 col-md-8 m-3">
         <h1>{{ review.title }}</h1>
         <p>By {{ review.book_author }}</p>
         <p>{{ review.content }}</p>
+        <p><small class="text-body-secondary">{{ review.created_at | date:"d, M, Y" }}</small></p>
         <hr />
 
         <div class="edit">
@@ -26,7 +34,9 @@
           {% endif %}
         </div>
 
+
         <!-- Like Buttons Icons from Font Awesome -->
+      <div class="like-section mt-3 mb-3">  
         {% if user.is_authenticated %}
         <form method="post" action="{% url 'review_like' slug=review.slug %}">
           {% csrf_token %} 
@@ -42,7 +52,8 @@
         </form>
         {% endif %}
         <small>{{ Total_likes }} {{ Total_likes|pluralize:"like,likes" }}</small>
-
+      </div>
+        
         <!-- Comment section -->
         <h5>Comments</h5>
         {% for comment in comments %}

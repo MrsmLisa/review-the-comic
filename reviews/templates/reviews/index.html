@@ -12,20 +12,24 @@
             </div>
           {% endfor %}
         {% endif %}
+
+
 <!-- Cards for reviews -->
   <!-- Bootstrap Card -->
-  <div class="row justify-content-center"> 
+<div class="container" style="max-width: 1024px;"> 
+<div class="row justify-content-center g-4"> 
     {% for review in reviews %}
     <div class="col-10 col-md-5 col-lg-5 mb-3">
+
       <!-- Made the whole card clickable -->
       <a href="{{ review.review_url }}" style="cursor: pointer;" class="text-decoration-none text-dark">
         <div class="card">
           <div class="row g-0">
-             <div class="col-md-4">
+          <div class="col-md-4">
               {% if "placeholder" in review.featured_image.url %}
-            <img src="{% static 'images/placeholder.jpg' %}"  alt="placeholder image">
+            <img src="{% static 'images/placeholder.jpg' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="placeholder image">
             {% else %}
-            <img src="{{ review.featured_image.url }}" alt="{{ review.title }}">
+            <img src="{{ review.featured_image.url }}" style="width: 100%; height: 100%; object-fit: cover; padding: 3px;" alt="{{ review.title }}">
             {% endif %}
           </div>
           <div class="col-md-8">
@@ -33,7 +37,7 @@
             <h2 class="card-title h5">{{ review.title }}</h2>
             <p class="card-author">By {{ review.book_author }}</p>
             <p class="card-text">{{review.excerpt}}.</p>
-            <p class="card-text"><small class="text-body-secondary">{{review.date}}</small></p>
+            <p><small class="text-body-secondary">{{ review.created_at | date:"d, M, Y" }}</small></p>
           </div>
           </div>
           </div>
@@ -41,7 +45,7 @@
       </a>
     </div>
     {% endfor %}
-      
+</div>      
 </div>
 
 
