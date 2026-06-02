@@ -86,7 +86,6 @@ I used ….. to build the schema and is as follows.
  * Review page
    - When the user clicks the card they are moved to the review page that shows the longer review.
 
-  <img width="310" height="727" alt="leave-review" src="https://github.com/user-attachments/assets/8e484e45-3d54-4ced-9da5-d9d1f7a74e5b" />
 <img width="318" height="738" alt="review" src="https://github.com/user-attachments/assets/fccdc0ae-8e27-4662-8ca6-3643bd96735c" />
 
  * Footer
@@ -101,12 +100,18 @@ For all these activities the user have to be logged in
 
  * Comment on a review
    - The user can comment on any of the reviews.
-   - when there is no review there is a text prompting to leave one.
+   - When there is no review there is a text prompting to leave one.
 
+   <img width="351" height="322" alt="comment" src="https://github.com/user-attachments/assets/a7c7df70-4644-4657-821f-77fcba13d3a3" />
+   <img width="739" height="186" alt="comment-made" src="https://github.com/user-attachments/assets/675bbab1-fff1-44e9-b696-1f3b2fb24053" />
+
+   <img width="373" height="78" alt="no-comment" src="https://github.com/user-attachments/assets/a6cca04a-5179-4081-a0de-31a8c10fc5ff" />
  
  * Edit/ delete
    - The user can both edit and delete their reviews.
    - If they delete there is a message to make sure they meant to delete.
+
+<img width="295" height="124" alt="edit_delete" src="https://github.com/user-attachments/assets/a30ff457-e01c-4515-ad01-9a2aeb00599d" />
 
      
  * Success messages
@@ -116,7 +121,10 @@ For all these activities the user have to be logged in
      
  * Like or unlike a review
    - The user can like or unlike a review.
-   - There is a counter to show how many likes a review has. 
+   - There is a counter to show how many likes a review has.
+     
+ <img width="92" height="85" alt="no-like" src="https://github.com/user-attachments/assets/fd6dc813-a7a1-4586-9151-b25405842355" />
+<img width="92" height="85" alt="like" src="https://github.com/user-attachments/assets/7e270bd2-63a4-4594-8285-3efe2c9e2297" />
 
 ### Accounts:
 
