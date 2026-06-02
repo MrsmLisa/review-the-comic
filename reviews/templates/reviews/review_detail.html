@@ -24,7 +24,7 @@
         <h1>{{ review.title }}</h1>
         <p>By {{ review.book_author }}</p>
         <p>{{ review.content }}</p>
-        <p><small class="text-body-secondary">{{ review.created_at | date:"d, M, Y" }}</small></p>
+        <p><small class="text-body-secondary">{{ review.created_at | date:"Y, M, d" }}</small></p>
         <hr />
 
         <div class="edit">

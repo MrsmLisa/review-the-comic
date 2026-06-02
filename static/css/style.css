@@ -13,6 +13,7 @@ body {
     margin: 0;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    padding-top: 60px; /* Adjust this value based on your navbar height */
 }
 
 h1, h5 {
@@ -87,6 +88,7 @@ p {
     padding: 0;
     background-color: black;
     width: 100%;
+    z-index: 1000;
 }
 
 .navbar-toggler {
