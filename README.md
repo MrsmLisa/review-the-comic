@@ -2,7 +2,7 @@
 
 ## Project Goals
 Review the Comic is a community platform for comic book enthusiasts to share their thoughts on graphic novels. Users can create reviews, comment on others' posts, and like their favourite reads. The site is designed to be clean, accessible, and easy to navigate on both mobile and desktop.
-
+---
 ## User stories
 
 ### Admin
@@ -50,8 +50,9 @@ To continue with the comic book page theme I have only used black and white for 
 For the headlines I used Luckiest guy and for the plain text and smaller headlines I used SN Pro.
 
 ### Imagery
-There are no images in this design except for the cover of the books. For the reviews I have taken them from a sci-fi bookshop website in Sweden that gets their images and blurbs from the publishing companies. https://www.sfbok.se/ 
-The logo was made by me with the speech bubble taken from Freepik.
+The logo was made by me with the speech bubble taken from Freepik. I used the same font as the headlines for the site.
+There are no images on the site exept for the cover images that users put in. For this site I have used images taken from [Sci-Fi bokhandeln](https://www.sfbok.se/). They get their images from the pubishing companies. 
+
 
 ### Wireframe
 As i wanted to make the site look like a comic page I wanted the review …. to be square and built it after that. 
@@ -59,6 +60,7 @@ I used whimsical to build the mockup.
 
 ### Database Diagram
 I used ….. to build the schema and is as follows.
+---
 
 ## Features:
 
@@ -103,7 +105,9 @@ For all these activities the user have to be logged in
    - When there is no review there is a text prompting to leave one.
 
    <img width="351" height="322" alt="comment" src="https://github.com/user-attachments/assets/a7c7df70-4644-4657-821f-77fcba13d3a3" />
-   <img width="739" height="186" alt="comment-made" src="https://github.com/user-attachments/assets/675bbab1-fff1-44e9-b696-1f3b2fb24053" />
+
+<img width="370" height="156" alt="comment-made" src="https://github.com/user-attachments/assets/12cc8e97-f97f-45a9-a226-be7a09f6a712" />
+
 
    <img width="373" height="78" alt="no-comment" src="https://github.com/user-attachments/assets/a6cca04a-5179-4081-a0de-31a8c10fc5ff" />
  
@@ -134,11 +138,11 @@ For all these activities the user have to be logged in
    
  * Sign in
    
+<img width="332" height="275" alt="sign-in" src="https://github.com/user-attachments/assets/cabd8550-78a1-4def-b6d9-e08d8de2733d" />
+   
  * Log out
 
 <img width="307" height="228" alt="log-out" src="https://github.com/user-attachments/assets/709709ca-ce28-4615-a246-7170774513f7" />
-
-
 
 ### Future implements
  * A rating system where the reviewer can mark on a scale their view of the comic.  
@@ -147,4 +151,94 @@ For all these activities the user have to be logged in
  * Put in more categories in the review-detail. For example genre, publisher and ISBN.  
  * Send out a email verification upon sign up.
  * A chat between members.
+
+---
+## Technologies:
+
+### Language used
+HTML  
+CSS  
+Python  
+
+###Library and programs used
+
+Git - for version control.  
+GitHub - for storing code and deploying site.  
+VS Code - to build the project  
+Django - a python based framework to develop this project.  
+Bootstrap - for HTML design templates  
+Cloudinary - to store images  
+Whimsical - to make the mockup design  
+Heroku - for deploying the project  
+SQL - database through Heroku  
+W3C - for validation of HTML and CSS  
+Pythontester - for validation of Python  
+Summernote - for usage in the admin panel  
+
+---
+## Testing:
+
+Validators
+User stories testing
+Feature testing
+bugs
+Gunicorn and Heroku
+Not showing comments
+CSS not updating
+Wloudinary would not work		
+
+---
+## Deployment:
+
+This website is deployed to Heroku from a GitHub repository, the following steps were taken:  
+
+### Creating Repository on GitHub
+
+1. First make sure you are signed into Github and go to the code institutes template, which can be found here.
+2. Then click on use this template and select Create a new repository from the drop-down. Enter the name for the repository and click Create repository from template.
+3. Once the repository was created, I clicked the green gitpod button to create a workspace in gitpod so that I could write the code for the site.
+
+### Deploying through Heroku
+
+1. Log in to [Heroku](https://www.heroku.com/)
+2. From the main Heroku dashboard select 'new', and 'create new app'
+3. Name your project, and select a suitable region. After this press 'create app'. (The name you choose must be unique)
+4. Previous step creates the app in Heroku and will bring you to the deploy tab. From the menu at the top you want to navigate to the resources tab. 
+5. After this you want to add the database to the app, you do this by going to the add-ons section and search for 'Heroku Postgres', select the package that appears and add it to the database. 
+6. Navigat3e to the settings, inside config vars you want to add the DATABASE_URL to the clipboard for the Django config. 
+7. Create a new file in GitPod called env.py and inside set your environment table for the DATABASE_URL and paste in the copied address from Heroku. 
+8. I created a secret key by adding SECRET_KEY in my env.py file, and in heroku. To get the secret key i typed 'openssl rand -base64 16' in my terminal. One time for a secret key to Heroku and a second time for a secret key to add in GitPod. 
+9. Create an account in Cloudinary, or log in if you already have an account. The url is found on your dashboard in your account. Copy this and add to your env.py file. 
+10. Paste it also into your Heroku config vars. 
+11. You now need to add 'KEY - DISABLE_COLLECTSTATIC' with the value of 1 to the config vars in Heroku, this line must be removed before final deployment of the project. 
+12. In GitPod you now have to add the cloudinary libraries to the list of installed apps in the settings file. The order here is important, 'cloudinary_storage' must go above 'django.contrib.staticfiles' and then 'cloudinary' goes below. 
+13. For your settings.py file you must also add the STATIC files, the url, storage path, directory path, root path, media url and the default file storage path. 
+14. You link this to the templates directory in Heroku with 'TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')'
+15. You also need to add new folders in GitPod. Create media, static and template folders and a file at the top level namned Procfile (the P has to be capital - important!)
+16. Inside the Procfile you need to add following: web: guincorn bakemeacake.wsgi.
+17. After adding these files, commit and push these changes to GitHub.
+18. In Heroku, go to the deployment tab and deploy this branch manually. This will lead to Heroku building this app for you, and you will be able to follow the build process in the window. 
+19. When successful, you will be displayed with following: "Your app was successfully deployed".
+
+---
+## Credits:
+
+### Code 
+There are a few instances where I have used code where I struggled.  
+
+For [Like and Unlike](https://dev.to/radualexandrub/how-to-add-like-unlike-button-to-your-django-blog-5gkg) as well as [Edit and Delete](https://dev.to/rishav_upadhaya/day-9-adding-edit-delete-features-to-my-blog-project-li6) I used code from dev.to to get it to work. I found his code easier to understand for me then the schools code.  
+
+I had some problem with getting my success messages to work and used the [Django documentation](https://docs.djangoproject.com/en/1.11/ref/contrib/messages/ ).  
+
+My site moved from side to side and [stackflow](https://stackoverflow.com/questions/44667161/page-moving-left-and-right-while-in-mobile-browser) provided the CSS code.  
+
+### Content
+For all the text and cover images in the reviews I have used text from [Sci-Fi Bokhandeln](https://www.sfbok.se/). They get the text (blurb) and images from the pubishing companies.
+
+---
+## Acknoledgements	
+Marko
+Jessica and Stephen Duffy   
+Discord community
+
 
