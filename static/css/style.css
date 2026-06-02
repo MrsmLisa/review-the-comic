@@ -82,7 +82,8 @@ p {
 }
     
 .navbar {
-    position: relative;
+    position: fixed;
+    top: 0;
     padding: 0;
     background-color: black;
     width: 100%;
