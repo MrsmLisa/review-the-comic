@@ -107,7 +107,41 @@ Bugs
 <img width="319" height="189" alt="navbar" src="https://github.com/user-attachments/assets/13ca204e-6d40-4b8b-a16a-c9b181bcaf86" />
 
 
+---
+## Feature testing
 
-Feature testing
 
-Bugs
+ * Nav Bar
+   Checked that:
+   - The logo link works and the cursor comes up when hovered over.
+   - The page the user is on is darker then the others.
+
+ * Cards
+   Checked that:
+   - The card is a link and takes you to the right review.
+   - The cursor comes up when hovered over.
+
+ * Review
+   Checked that:
+   - The Edit and Delete Review buttons works for the logged in user.
+   - The like/unlike button works for the logged in user.
+   - The logged in user can leave a comment.
+   - When user have left a comment they get a success message
+
+ * Create a review
+   Checked that:
+   - The images get loaded on to Cloudinary.
+   - That the logged in user can create a review.
+   - When the user have created a review they get a success message.
+
+ * Sign up / Sign in / Log out
+   Checked that:
+   - The Sign up register a new user.
+   - The user can Sign in.
+   - The user can Sign out.
+   - When the user have done any of the above they get a success message.
+
+---
+## Bugs
+
+ * 
