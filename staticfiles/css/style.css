@@ -1,12 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
+html, body {
+    width: auto!important; 
+    overflow-x: hidden!important
+} 
+
+
 body {
     background-color: white;
     min-height: 100vh;
     margin: 0;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    padding-top: 60px; 
 }
 
 h1, h5 {
@@ -35,7 +42,6 @@ p {
     border-width: 2px;
     border-radius: 4px;
     background-color: transparent;
-    padding: 4px 4px !important;
 }
 
 .button {
@@ -67,6 +73,7 @@ p {
     width: auto;
     padding: 10px 20px;
     z-index: 999;
+    background-color: white !important;
 }
 
 .nav-title {
@@ -77,9 +84,12 @@ p {
 }
     
 .navbar {
-    position: relative;
+    position: fixed;
+    top: 0;
     padding: 0;
     background-color: black;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-toggler {
@@ -87,6 +97,10 @@ p {
     padding: 2px 4px;
     margin: 10px;
     font-size: medium;
+}
+
+.navbar .navbar-collapse {
+    background-color: white;
 }
 
 .logo2 {
@@ -103,7 +117,7 @@ p {
 }
 
 .hero p {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     text-align: center;
     margin: 0;
 }
@@ -115,6 +129,7 @@ p {
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
+    width: 100%;
 }
 .footer p {
     color: white;
@@ -147,11 +162,17 @@ p {
     border-radius: 0;
     margin-left: 5px;
     margin-right: 5px; 
+    max-width: 400px;
 }
 
 .card p {
     font-size: 0.8em;
     margin-bottom: 0;
+}
+
+.card-author {
+    font-size: 1em !important;
+    margin-bottom: 5px !important;
 }
 
 .comment-p {

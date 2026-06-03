@@ -73,6 +73,7 @@ p {
     width: auto;
     padding: 10px 20px;
     z-index: 999;
+    background-color: white !important;
 }
 
 .nav-title {
@@ -96,6 +97,10 @@ p {
     padding: 2px 4px;
     margin: 10px;
     font-size: medium;
+}
+
+.navbar .navbar-collapse {
+    background-color: white;
 }
 
 .logo2 {
@@ -175,9 +180,8 @@ p {
     margin-bottom: 1rem !important;
 }
 
-.img-detail {
-    width: 50% !important;
-    height: auto !important;
-    object-fit: cover;
-    padding: 3px;
+@media (max-width: 320px) {
+    .image-detail {
+        max-width: 300px;
+    }
 }
