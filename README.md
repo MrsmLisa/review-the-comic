@@ -33,6 +33,7 @@ Review the Comic is a community platform for comic book enthusiasts to share the
 ### Account
 
   * As a user I can easily register an account.
+  * as a user I can easily sign in and log out.
   * As a user I can easily delete my account.
 
 ## Planning:
