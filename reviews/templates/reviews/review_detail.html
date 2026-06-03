@@ -15,9 +15,9 @@
         {% endif %}
          <div class="col-md-7">
               {% if "placeholder" in review.featured_image.url %}
-            <img src="{% static 'images/placeholder.jpg' %}" style="width: 100%; height: 100%; object-fit: cover;" alt="placeholder image">
+            <img src="{% static 'images/placeholder.jpg' %}" class="img-detail" alt="placeholder image">
             {% else %}
-            <img src="{{ review.featured_image.url }}" style="width: 100%; height: 100%; object-fit: cover; padding: 3px;" alt="{{ review.title }}">
+            <img src="{{ review.featured_image.url }}" class="img-detail" alt="{{ review.title }}">
             {% endif %}
           </div>
       <div class="col-10 col-md-8 m-3">

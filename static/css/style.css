@@ -13,7 +13,7 @@ body {
     margin: 0;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding-top: 60px; /* Adjust this value based on your navbar height */
+    padding-top: 60px; 
 }
 
 h1, h5 {
@@ -175,4 +175,9 @@ p {
     margin-bottom: 1rem !important;
 }
 
-
+.img-detail {
+    width: 50% !important;
+    height: auto !important;
+    object-fit: cover;
+    padding: 3px;
+}
