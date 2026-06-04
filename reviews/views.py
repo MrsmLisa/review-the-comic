@@ -146,3 +146,9 @@ class ReviewLikeView(DetailView):
         data['post_is_liked'] = liked
         data['total_likes'] = like_connected.total_likes()
         return data
+
+def handler_404_view(request, exception):
+    return render(request, '404.html', status=404)
+
+def handler_500_view(request):
+    return render(request, '500.html', status=500)
