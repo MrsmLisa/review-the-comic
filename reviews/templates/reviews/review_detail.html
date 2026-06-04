@@ -1,4 +1,4 @@
-{% extends 'base2.html' %} 
+{% extends 'base.html' %} 
 {%load crispy_forms_tags %} 
 {% load static %} 
 {% block content %}
@@ -6,13 +6,6 @@
 <section>
   <div class="container">
     <div class="row justify-content-center m-3">
-          {% if messages %}
-          {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}" role="alert">
-              {{ message }}
-            </div>
-          {% endfor %}
-        {% endif %}
          <div class="col-12 col-md-7">
               {% if "placeholder" in review.featured_image.url %}
             <img src="{% static 'images/placeholder.jpg' %}" class="img-detail" alt="placeholder image">

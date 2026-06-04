@@ -73,7 +73,7 @@ p {
     width: auto;
     padding: 10px 20px;
     z-index: 999;
-    background-color: white !important;
+    background-color: white ;
 }
 
 .nav-title {
@@ -170,14 +170,14 @@ p {
     margin-bottom: 0;
 }
 
-.card-author {
-    font-size: 1em !important;
-    margin-bottom: 5px !important;
+p .card-author {
+    font-size: 1em;
+    margin-bottom: 5px;
 }
 
-.comment-p {
-    font-size: 1em !important;
-    margin-bottom: 1rem !important;
+p .comment-p {
+    font-size: 1em;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 320px) {

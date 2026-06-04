@@ -114,7 +114,7 @@ def editPost(request, slug):
             return redirect('review_detail', slug=slug)
     else:
         form = ReviewForm(instance=review)
-    return render(request, 'reviews/review_form.html', {'form': form})
+    return render(request, 'reviews/review_form.html', {'form': form, 'editing': True})
 
 
 @login_required
