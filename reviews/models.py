@@ -48,3 +48,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'Comment by {self.author} on {self.review}'
+    
+
+class Tagline(models.Model):
+    text = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.text

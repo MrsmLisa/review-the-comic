@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Review, Comment
+from .models import Review, Comment, Tagline
+
 
 
 @admin.register(Review)
@@ -22,7 +23,12 @@ class CommentAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
     approve_comments.short_description = "Approve selected comments"
 
+class TaglineAdmin(admin.ModelAdmin):
+    list_display = ('text',)
+
+
 # Register your models here.
 
 
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Tagline, TaglineAdmin)

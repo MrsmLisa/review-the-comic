@@ -1,7 +1,9 @@
+from random import random
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
 from requests import post, request
-from .models import Review
+from .models import Review, Tagline
 from django.views.generic import ListView, DetailView
 from .forms import CommentForm
 from .forms import ReviewForm
@@ -13,6 +15,7 @@ from django.urls import reverse
 
 #review main page
 
+import random
 
 class ReviewListView(ListView):
     model = Review
@@ -20,6 +23,13 @@ class ReviewListView(ListView):
     context_object_name = 'reviews'
     queryset = Review.objects.filter(status=1).order_by('-created_at')
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        conext = super().get_context_data(**kwargs)
+        taglines = Tagline.objects.all()
+        if taglines:
+            conext['taglines'] = random.choice(taglines)
+        return conext
 
 # review detail page
 
