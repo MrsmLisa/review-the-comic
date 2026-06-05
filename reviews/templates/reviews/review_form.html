@@ -6,6 +6,8 @@
 
 <section>
   <div class="container">
+    <div class="row justify-content-center m-3">
+      <div class="col-12 col-md-8">
      
     <h2>Create Review</h2>
     <form method="post" enctype="multipart/form-data">
@@ -13,6 +15,9 @@
       {{ form|crispy }}
       <button type="submit" class="btn btn-primary">{% if editing %}Update Review{% else %}Create Review{% endif %}</button>
     </form>
+      </div>
+    </div>
   </div>
+</section>
 
 {% endblock %}

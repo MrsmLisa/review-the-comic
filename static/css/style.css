@@ -1,9 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
-html, body {
-    width: auto!important; 
-    overflow-x: hidden!important
+html {
+    width: auto; 
+    overflow-x: hidden;
 } 
 
 
@@ -104,8 +104,8 @@ p {
 }
 
 .logo2 {
-    width: 12em !important;
-    height: auto !important;
+    width: 12em;
+    height: auto;
 }
 
 /* hero section */
@@ -144,7 +144,7 @@ p {
         font-size: 3em;
     }
     .logo2 {
-        width: 18em !important;
+        width: 18em;
     }
      .hero p {
         font-size: 1rem;
@@ -180,8 +180,8 @@ p .comment-p {
     margin-bottom: 1rem;
 }
 
-@media (max-width: 320px) {
-    .image-detail {
-        max-width: 300px;
-    }
+/* review detail page */
+
+.review-detail {
+   padding:0;
 }

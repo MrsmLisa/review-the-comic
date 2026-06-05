@@ -4,16 +4,16 @@
 {% block content %}
 
 <section>
-  <div class="container">
+  <div class="container review-detail">
     <div class="row justify-content-center m-3">
-         <div class="col-12 col-md-7">
+         <div class="col-12 col-md-7 text-center">
               {% if "placeholder" in review.featured_image.url %}
             <img src="{% static 'images/placeholder.jpg' %}" class="img-detail" alt="placeholder image">
             {% else %}
             <img src="{{ review.featured_image.url }}" class="img-detail" alt="{{ review.title }}">
             {% endif %}
           </div>
-      <div class="col-12 col-md-8 m-3">
+      <div class="col-12 col-md-7 m-3">
         <h1>{{ review.title }}</h1>
         <p>By {{ review.book_author }}</p>
         <p>{{ review.content }}</p>
