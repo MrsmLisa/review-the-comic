@@ -30,7 +30,7 @@
     {% url 'account_login' as login_url %} 
     {% url 'account_signup' as signup_url %} 
     {% url 'account_logout' as logout_url %}
-    <section>
+    <div class="nav-bar-section">
       <!-- navbar from Bootstrap -->
       <nav class="navbar">
         <div class="container-fluid">
@@ -100,7 +100,7 @@
             </div>
           {% endfor %}
         {% endif %}
-    </section>
+    </div>
     <main>{% block content %} {% endblock %}</main>
     <!-- Footer -->
     <footer class="footer">
