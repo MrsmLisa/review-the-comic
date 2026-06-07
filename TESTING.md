@@ -10,9 +10,9 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| reviews | [confirm_delete.html](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/templates/reviews/confirm_delete.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-reviews-confirm_delete.png) | ⚠️ Notes (if applicable) |
-| reviews | [index.html](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/templates/reviews/index.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-reviews-index.png) | ⚠️ Notes (if applicable) |
-| reviews | [review_detail.html](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/templates/reviews/review_detail.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-reviews-review_detail.png) | ⚠️ Notes (if applicable) |
+| reviews | [confirm_delete.html](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/templates/reviews/confirm_delete.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/reviews/confirm_delete.png) | ⚠️ Notes (if applicable) |
+| reviews | [index.html](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/templates/reviews/index.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/reviews/index.png) | ⚠️ Notes (if applicable) |
+| reviews | [review_detail.html](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/templates/reviews/review_detail.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/reviews/review_detail.png) | ⚠️ Notes (if applicable) |
 | reviews | [review_form.html](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/templates/reviews/review_form.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-reviews-review_form.png) | ⚠️ Notes (if applicable) |
 | templates | [base2.html](https://github.com/MrsmLisa/review-the-comic/blob/main/templates/base2.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-base2.png) | ⚠️ Notes (if applicable) |
 | templates | [test_403_csrf.html](https://github.com/MrsmLisa/review-the-comic/blob/main/templates/tests/test_403_csrf.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-test_403_csrf.png) | ⚠️ Notes (if applicable) |
