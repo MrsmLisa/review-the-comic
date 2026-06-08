@@ -22,7 +22,7 @@ class Review(models.Model):
     )
     likes = models.ManyToManyField(User, related_name="liked_reviews")
     featured_image = CloudinaryField('image', transformation=[
-    {'width': 400, 'height': 'auto', 'crop': 'fill'}
+    {'width': 400, 'height': 600, 'crop': 'fill'}
     ], default='placeholder')
 
     class Meta:
