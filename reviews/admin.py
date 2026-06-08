@@ -3,7 +3,6 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Review, Comment, Tagline
 
 
-
 @admin.register(Review)
 class ReviewAdmin(SummernoteModelAdmin):
     list_display = ('title', 'book_author', 'created_at', 'status')
@@ -22,6 +21,7 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
     approve_comments.short_description = "Approve selected comments"
+
 
 class TaglineAdmin(admin.ModelAdmin):
     list_display = ('text',)

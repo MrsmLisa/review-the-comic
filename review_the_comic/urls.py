@@ -25,7 +25,9 @@ urlpatterns = [
     path('', include('reviews.urls')),
     path('accounts/', include('allauth.urls')),
     path('', views.ReviewListView.as_view(), name='index'),
-    path('review/<slug:slug>/', views.ReviewDetailView.as_view(), name='review_detail'),
+    path('review/<slug:slug>/', 
+        views.ReviewDetailView.as_view(), name='review_detail'
+        ),
 ]
 
 handler404 = 'reviews.views.handler_404_view'

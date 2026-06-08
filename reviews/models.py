@@ -13,20 +13,24 @@ class Review(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True)
-    status = models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=1)
+    status = models.IntegerField(
+        choices=[(0, "Draft"), (1, "Published")], default=1
+    )
     excerpt = models.CharField(max_length=255, blank=True, null=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
-    likes = models.ManyToManyField(User, related_name='liked_reviews')
-    featured_image = CloudinaryField('image', default='placeholder')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="reviews"
+    )
+    likes = models.ManyToManyField(User, related_name="liked_reviews")
+    featured_image = CloudinaryField("image", default="placeholder")
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ["-created_at"]
 
     def __str__(self):
         return self.title
 
     def review_url(self):
-        return reverse('review_detail', kwargs={'slug': self.slug})
+        return reverse("review_detail", kwargs={"slug": self.slug})
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -38,17 +42,19 @@ class Review(models.Model):
 
 
 class Comment(models.Model):
-    review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='comments')
+    review = models.ForeignKey(
+        Review, on_delete=models.CASCADE, related_name="comments"
+    )
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['created_at']
+        ordering = ["created_at"]
 
     def __str__(self):
-        return f'Comment by {self.author} on {self.review}'
-    
+        return f"Comment by {self.author} on {self.review}"
+
 
 class Tagline(models.Model):
     text = models.CharField(max_length=200)
