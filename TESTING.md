@@ -33,12 +33,28 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-|  | [manage.py](https://github.com/MrsmLisa/review-the-comic/blob/main/manage.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/manage.py) | ![screenshot](documentation/validation/py--manage.png) | ⚠️ Notes (if applicable) |
-| review_the_comic | [settings.py](https://github.com/MrsmLisa/review-the-comic/blob/main/review_the_comic/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/review_the_comic/settings.py) | ![screenshot](documentation/validation/py-review_the_comic-settings.png) | ⚠️ Notes (if applicable) |
-| review_the_comic | [urls.py](https://github.com/MrsmLisa/review-the-comic/blob/main/review_the_comic/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/review_the_comic/urls.py) | ![screenshot](documentation/validation/py-review_the_comic-urls.png) | ⚠️ Notes (if applicable) |
-| reviews | [admin.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/admin.py) | ![screenshot](documentation/validation/py-reviews-admin.png) | ⚠️ Notes (if applicable) |
-| reviews | [forms.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/forms.py) | ![screenshot](documentation/validation/py-reviews-forms.png) | ⚠️ Notes (if applicable) |
-| reviews | [models.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/models.py) | ![screenshot](documentation/validation/py-reviews-models.png) | ⚠️ Notes (if applicable) |
-| reviews | [tests.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/tests.py) | ![screenshot](documentation/validation/py-reviews-tests.png) | ⚠️ Notes (if applicable) |
-| reviews | [urls.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/urls.py) | ![screenshot](documentation/validation/py-reviews-urls.png) | ⚠️ Notes (if applicable) |
-| reviews | [views.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/views.py) | ![screenshot](documentation/validation/py-reviews-views.png) | ⚠️ Notes (if applicable) |
+|  | [manage.py](https://github.com/MrsmLisa/review-the-comic/blob/main/manage.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/manage.py) | ![screenshot](documentation/validation/python/manage-py.png) |  |
+| review_the_comic | [settings.py](https://github.com/MrsmLisa/review-the-comic/blob/main/review_the_comic/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/review_the_comic/settings.py) | ![screenshot](documentation/validation/python/settings-py.png) |  |
+| review_the_comic | [urls.py](https://github.com/MrsmLisa/review-the-comic/blob/main/review_the_comic/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/review_the_comic/urls.py) | ![screenshot](documentation/validation/python/url-review-the-comic.png) |  |
+| reviews | [admin.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/admin.py) | ![screenshot](documentation/validation/python/admin-py.png) |  |
+| reviews | [forms.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/forms.py) | ![screenshot](documentation/validation/python/forms-py.png) |  |
+| reviews | [models.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/models.py) | ![screenshot](documentation/validation/python/models-py.png) |  |
+| reviews | [tests.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/tests.py) | ![screenshot](documentation/validation/python/test-py.png) |  |
+| reviews | [urls.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/urls.py) | ![screenshot](documentation/validation/python/url-py-review.png) |  |
+| reviews | [views.py](https://github.com/MrsmLisa/review-the-comic/blob/main/reviews/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/review-the-comic/main/reviews/views.py) | ![screenshot](documentation/validation/python/views-py.png) |  |
+
+## Responsiveness
+
+I've tested my deployed project to check for responsiveness issues.
+
+| Page | Mobile | Tablet | Desktop | Notes |
+| --- | --- | --- | --- | --- |
+| Register | ![screenshot](documentation/responsiveness/mobile-register.png) | ![screenshot](documentation/responsiveness/tablet-register.png) | ![screenshot](documentation/responsiveness/desktop-register.png) | Works as expected |
+| Login | ![screenshot](documentation/responsiveness/mobile-login.png) | ![screenshot](documentation/responsiveness/tablet-login.png) | ![screenshot](documentation/responsiveness/desktop-login.png) | Works as expected |
+| Home | ![screenshot](documentation/responsiveness/mobile-home.png) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/desktop-home.png) | Works as expected |
+| Add Blog | ![screenshot](documentation/responsiveness/mobile-add-blog.png) | ![screenshot](documentation/responsiveness/tablet-add-blog.png) | ![screenshot](documentation/responsiveness/desktop-add-blog.png) | Works as expected |
+| Edit Blog | ![screenshot](documentation/responsiveness/mobile-edit-blog.png) | ![screenshot](documentation/responsiveness/tablet-edit-blog.png) | ![screenshot](documentation/responsiveness/desktop-edit-blog.png) | Works as expected |
+| Blog Post | ![screenshot](documentation/responsiveness/mobile-blog-post.png) | ![screenshot](documentation/responsiveness/tablet-blog-post.png) | ![screenshot](documentation/responsiveness/desktop-blog-post.png) | Works as expected |
+| 404 | ![screenshot](documentation/responsiveness/mobile-404.png) | ![screenshot](documentation/responsiveness/tablet-404.png) | ![screenshot](documentation/responsiveness/desktop-404.png) | Works as expected |
+
+## Browser Compatibility

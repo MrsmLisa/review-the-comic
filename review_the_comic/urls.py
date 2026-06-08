@@ -20,15 +20,17 @@ from django.urls import path, include
 from reviews import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('summernote/', include('django_summernote.urls')),
-    path('', include('reviews.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('', views.ReviewListView.as_view(), name='index'),
-    path('review/<slug:slug>/', 
-        views.ReviewDetailView.as_view(), name='review_detail'
-        ),
+    path("admin/", admin.site.urls),
+    path("summernote/", include("django_summernote.urls")),
+    path("", include("reviews.urls")),
+    path("accounts/", include("allauth.urls")),
+    path("", views.ReviewListView.as_view(), name="index"),
+    path(
+        "review/<slug:slug>/",
+        views.ReviewDetailView.as_view(),
+        name="review_detail",
+    ),
 ]
 
-handler404 = 'reviews.views.handler_404_view'
-handler500 = 'reviews.views.handler_500_view'
+handler404 = "reviews.views.handler_404_view"
+handler500 = "reviews.views.handler_500_view"
