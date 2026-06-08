@@ -21,8 +21,10 @@ class Review(models.Model):
         User, on_delete=models.CASCADE, related_name="reviews"
     )
     likes = models.ManyToManyField(User, related_name="liked_reviews")
-    featured_image = CloudinaryField("image", transformation=[{'width': 500, 'height': 'auto', 'crop': 'fill'}], default="placeholder")
-
+    featured_image = CloudinaryField('image', transformation=[
+    {'width': 500, 'height': 600, 'crop': 'fill'}
+    ], default='placeholder')
+    
     class Meta:
         ordering = ["-created_at"]
 
