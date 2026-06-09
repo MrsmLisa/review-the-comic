@@ -187,7 +187,7 @@ def delete_comment(request, slug, comment_id):
         comment.delete()
         messages.success(request, "Comment deleted successfully.")
         return redirect("review_detail", slug=slug)
-    return render(request, "reviews/confirm_delete_comment.html", {"comment": comment})
+    return render(request, "reviews/confirm_delete_comment.html", {"comment": comment, 'slug': slug})
 
 @login_required
 def edit_comment(request, slug, comment_id):
@@ -204,4 +204,4 @@ def edit_comment(request, slug, comment_id):
             return redirect("review_detail", slug=slug)
     else:
         form = CommentForm(instance=comment)
-    return render(request, "reviews/edit_comment.html", {"form": form})
+    return render(request, "reviews/edit_comment.html", {"form": form, 'comment': comment, 'slug': slug})
