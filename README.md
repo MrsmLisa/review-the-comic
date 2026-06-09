@@ -1,4 +1,4 @@
-# [review-the-comic](https://review-the-comic-ac6c1ec7e7bf.herokuapp.com)
+# [Review the comic](https://review-the-comic-ac6c1ec7e7bf.herokuapp.com)
 
 Developer: Lisa Scott ([MrsmLisa](https://www.github.com/MrsmLisa))
 
@@ -92,6 +92,16 @@ The high contrast black and white palette was chosen deliberately to reflect the
 
 ## Wireframes
 
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+| Page | Mobile | Tablet | Desktop |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/wireframes/mobile-home.png) | ![screenshot](documentation/wireframes/tablet-home.png) | ![screenshot](documentation/wireframes/desktop-home.png) |
+| Blog Post | ![screenshot](documentation/wireframes/mobile-blog-post.png) | ![screenshot](documentation/wireframes/tablet-blog-post.png) | ![screenshot](documentation/wireframes/desktop-blog-post.png) |
+
+
+
 ## User Stories
 
 | Target | Expectation | Outcome |
@@ -125,8 +135,7 @@ The high contrast black and white palette was chosen deliberately to reflect the
 | Register | Authentication is handled by allauth, allowing users to register accounts. | ![screenshot](documentation/features/register.png) |
 | Login | Authentication is handled by allauth, allowing users to log in to their existing accounts. | ![screenshot](documentation/features/login.png) |
 | Logout | Authentication is handled by allauth, allowing users to log out of their accounts. | ![screenshot](documentation/features/logout.png) |
-| Funny Quote | At the top of the homepage there is a quote that changes every time the page loads. | ![screenshot](documentation/features/hero
-.png) |
+| Funny Quote | At the top of the homepage there is a quote that changes every time the page loads. | ![screenshot](documentation/features/hero.png) |
 | Blog List | The homepage displays basic information about blog posts, including image, title, author, date, and a brief excerpt. | ![screenshot](documentation/features/blog-list.png) |
 | View Post | Users can view the full blog post details, including any comments. | ![screenshot](documentation/features/view-post.png) ![screenshot](documentation/features/view-post2.png) |
 | Pagination | Blog posts are displayed in pages, with six posts per page. This provides better navigation for users through the post list. | ![screenshot](documentation/features/pagination.png) |
@@ -143,7 +152,6 @@ The high contrast black and white palette was chosen deliberately to reflect the
 
 ### Future Features
 
-## Future Features
 
 - **Rating System**: Allow reviewers to rate comics on a scale alongside their written review, giving readers a quick visual indicator of the reviewer's opinion before reading the full content.
 
