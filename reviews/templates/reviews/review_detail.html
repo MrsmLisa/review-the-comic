@@ -55,6 +55,10 @@
             <p class="comment-p">{{ comment.content }}</p>
             <p>By {{ comment.author }}</p>
             <p>Posted on {{ comment.created_at }}</p>
+            {% if user == comment.author %}
+            <a href="{% url 'edit_comment' slug=review.slug comment_id=comment.id %}" class="btn btn-sm btn-outline-primary">Edit</a>
+            <a href="{% url 'delete_comment' slug=review.slug comment_id=comment.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+            {% endif %}
           </div>
         </div>
         {% empty %}

@@ -175,3 +175,33 @@ def handler_404_view(request, exception):
 
 def handler_500_view(request):
     return render(request, "500.html", status=500)
+
+@login_required
+def delete_comment(request, slug, comment_id):
+    review = get_object_or_404(Review, slug=slug)
+    comment = get_object_or_404(review.comments, id=comment_id)
+    if comment.author != request.user:
+        messages.error(request, "You are not authorized to delete this comment.")
+        return redirect("review_detail", slug=slug)
+    if request.method == "POST":
+        comment.delete()
+        messages.success(request, "Comment deleted successfully.")
+        return redirect("review_detail", slug=slug)
+    return render(request, "reviews/confirm_delete_comment.html", {"comment": comment})
+
+@login_required
+def edit_comment(request, slug, comment_id):
+    review = get_object_or_404(Review, slug=slug)
+    comment = get_object_or_404(review.comments, id=comment_id)
+    if comment.author != request.user:
+        messages.error(request, "You are not authorized to edit this comment.")
+        return redirect("review_detail", slug=slug)
+    if request.method == "POST":
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Comment updated successfully.")
+            return redirect("review_detail", slug=slug)
+    else:
+        form = CommentForm(instance=comment)
+    return render(request, "reviews/edit_comment.html", {"form": form})
