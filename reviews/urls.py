@@ -13,6 +13,14 @@ urlpatterns = [
     path("review/<slug:slug>/like/", views.review_like, name="review_like"),
     path("edit_review/<slug:slug>/", views.editPost, name="edit_review"),
     path("delete_review/<slug:slug>/", views.deletePost, name="delete_review"),
-    path('review/<slug:slug>/delete_comment/<int:comment_id>/', views.delete_comment, name='delete_comment'),
-    path('review/<slug:slug>/edit_comment/<int:comment_id>/', views.edit_comment, name='edit_comment'),
+    path(
+        "review/<slug:slug>/delete_comment/<int:comment_id>/",
+        views.delete_comment,
+        name="delete_comment",
+    ),
+    path(
+        "review/<slug:slug>/edit_comment/<int:comment_id>/",
+        views.edit_comment,
+        name="edit_comment",
+    ),
 ]
