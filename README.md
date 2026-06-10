@@ -451,6 +451,6 @@ There are no remaining major differences between the local version when compared
 ### Acknowledgements
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/TravelTimN) for the support throughout the development of this project.
-- Also my tutor Marko .... for the support during the classes and the project.
-- To Jessica and Stephen Duffy Fransson for the help with testing the website.
+- Also my tutor Marko Tot for the support during the classes and the project.
+- To Jessica and Stephen Duffy Fransson and Jenny Bergman for the help with testing the website.
 - And to my family, Daniel and Keegan, for the love , support and patience. 
