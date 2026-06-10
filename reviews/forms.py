@@ -16,7 +16,7 @@ class ReviewForm(forms.ModelForm):
 
     def featured_image(self):
         image = self.cleaned_data.get("featured_image")
-        if not image:
+        if not image or str(image) == "placeholder":
             raise forms.ValidationError(
                 "Please upload a cover image for your review."
             )
